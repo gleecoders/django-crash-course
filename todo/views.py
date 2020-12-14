@@ -35,3 +35,15 @@ def todo_create(request):
     }
     return render(request, "todo/todo_create.html", context)
 
+
+def todo_update(request, id):
+    todo = Todo.objects.get(id=id)
+    form = TodoForm(request.POST or None, instance=todo)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+
+    context = {
+        'form': form
+    }
+    return render(request, "todo/todo_update.html", context)
