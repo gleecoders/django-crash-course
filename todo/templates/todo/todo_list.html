@@ -13,6 +13,11 @@
     {% else %}
         Hello anonymous user
     {% endif %}
+
+    <br>
+
+    <a href="/create">Create a todo</a>
+    
     <ul>
         {% for todo in todo_list %}
             <li>
