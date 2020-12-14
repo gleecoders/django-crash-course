@@ -8,4 +8,4 @@ def todo_list(request):
     context = {
         "todo_list": todos
     }
-    return render(request, "todo/todo_list.html", todos)
+    return render(request, "todo/todo_list.html", context)
